@@ -1,0 +1,36 @@
+.post-toolbar {
+  font-size: 11px;
+  padding: 4px;
+  border-bottom: 1px solid #444;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  position: relative; }
+  .post-toolbar .toolbar-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    padding: 7px;
+    padding-right: 0;
+    background: #201F1D; }
+  .post-toolbar .relationship-icons {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px; }
+  .post-toolbar .toolbar-item {
+    display: inline-block;
+    vertical-align: top; }
+    .post-toolbar .toolbar-item.icon,
+    .post-toolbar .toolbar-item.icon > a {
+      margin-left: 5px;
+      font-size: 20px; }
+      .post-toolbar .toolbar-item.icon:hover,
+      .post-toolbar .toolbar-item.icon > a:hover {
+        cursor: pointer;
+        color: #ffa500;
+        text-decoration: none; }
+    .post-toolbar .toolbar-item a {
+      color: #FFF; }
+    .post-toolbar .toolbar-item .posted-at {
+      color: #777; }

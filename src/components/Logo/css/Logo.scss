@@ -1,0 +1,14 @@
+$orange: #ffa500;
+
+.logo {
+
+    .icon {
+        margin-top: 5px;
+        font-size: 20px;
+
+        &:hover {
+            cursor: pointer;
+            color: $orange;
+        }
+    }
+}

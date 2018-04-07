@@ -1,0 +1,54 @@
+$columnOneBG: #201F1D;
+$columnTwoBG: #141518;
+$orange: #ffa500;
+
+.post-toolbar {
+    font-size: 11px;
+    padding: 4px;
+    border-bottom: 1px solid #444;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+
+    .toolbar-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        padding: 7px;
+        padding-right: 0;
+        background: $columnOneBG;
+    }
+
+    .relationship-icons {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 15px;
+    }
+
+    .toolbar-item {
+        display: inline-block;
+        vertical-align: top;
+
+        &.icon,
+        &.icon > a {
+            margin-left: 5px;
+            font-size: 20px;
+
+            &:hover {
+                cursor: pointer;
+                color: $orange;
+                text-decoration: none;
+            }
+        }
+
+        a {
+            color: #FFF;
+        }
+
+        .posted-at {
+            color: #777;
+        }
+    }
+}
