@@ -28,6 +28,9 @@ export class PostDetails extends Component {
         // Retrieve post details response from server
         this.postDetails = this.postDetails.bind(this);
 
+        // Censor post if user chooses
+        this.toggleCensor = this.toggleCensor.bind(this);
+
         // Post event listeners
         this.socket.on('post:details', this.postDetails);
     }
@@ -71,6 +74,22 @@ export class PostDetails extends Component {
         console.log('Post', post);
     }
 
+    /**
+     * Toggle the post image(s) to be hidden due to content they
+     * may not want to see
+     */
+    toggleCensor() {
+        let post = this.state.post;
+
+        post.censored = !post.censored;
+
+        this.setState({
+            post: post,
+        });
+
+        console.log('Censor Toggle', post.censored);
+    }
+
     render() {
         let post = this.state.post;
         let images = [];
@@ -80,7 +99,7 @@ export class PostDetails extends Component {
                 post.images.map((image, i) => {
                     return images.push(
                         <div key={i}>
-                            <PostImage post={post} image={image} details={true} />
+                            <PostImage post={post} image={image} details={true} toggleCensor={this.toggleCensor} />
                             <PostTitle title={image.title} />
                             <PostDescription description={image.description} />
                         </div>
@@ -90,7 +109,7 @@ export class PostDetails extends Component {
             return (
                 <div className="row post-details-container max-height">
                     <div className="col-12 col-sm-12 col-md-10 offset-md-1">
-                        <PostToolbar post={post} />
+                        <PostToolbar post={post} toggleCensor={this.toggleCensor} />
                         <PostTitle title={post.title} tags={post.post_tags} />
                         {images}
                     </div>
