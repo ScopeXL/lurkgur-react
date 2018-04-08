@@ -35,12 +35,14 @@ export class PostImage extends Component {
         let image_count_html;
         // Censor image overlay
         let censor_image_overlay;
+        // Show the thumbnail when not in detail view
+        let image_src = this.props.details ? image.imgurImgLink : image.imgLink;
 
         if (image.animated) {
             // Show image as a looping mp4
             image_html = (
                 <span>
-                    <video className="img-fluid" style={{width: image.width}} poster={image.imgLink} muted autoPlay loop playsInline preload="auto">
+                    <video className="img-fluid" style={{width: image.width}} poster={image_src} muted autoPlay loop playsInline preload="auto">
                         <source src={image.imgurImgLink} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
@@ -50,12 +52,12 @@ export class PostImage extends Component {
             // Show static image
             image_html = (
                 <span>
-                    <img className="img-fluid" src={image.imgLink} style={{width: image.width}} alt={post.title} />
+                    <img className="img-fluid" src={image_src} style={{width: image.width}} alt={post.title} />
                 </span>
             );
         }
 
-        if (post.images_count > 1) {
+        if (post.images_count > 1 && !this.props.details) {
             image_count_html = (
                 <div className="image-count desktop">{post.images_count}</div>
             );

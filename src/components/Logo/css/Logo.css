@@ -1,6 +1,8 @@
-.logo .icon {
-  margin-top: 5px;
-  font-size: 20px; }
-  .logo .icon:hover {
-    cursor: pointer;
-    color: #ffa500; }
+.logo {
+  margin-bottom: 10px; }
+  .logo .icon {
+    margin-top: 5px;
+    font-size: 20px; }
+    .logo .icon:hover {
+      cursor: pointer;
+      color: #ffa500; }

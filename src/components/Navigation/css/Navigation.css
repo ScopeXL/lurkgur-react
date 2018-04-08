@@ -1,0 +1,30 @@
+.nav-container .navigation {
+  margin: 0 -15px;
+  margin-bottom: 10px;
+  padding: 0; }
+  .nav-container .navigation li {
+    position: relative;
+    border-top: 1px solid #444;
+    margin: 0;
+    list-style: none; }
+    .nav-container .navigation li a {
+      display: block;
+      color: #777 !important;
+      padding: 4px 15px; }
+      .nav-container .navigation li a:hover {
+        cursor: pointer;
+        text-decoration: none;
+        color: #a1a1a1 !important; }
+
+.nav-container ::placeholder {
+  color: #FFF; }
+
+.nav-container .search-input {
+  border: none;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: #777;
+  color: #FFF;
+  padding: 2px 4px;
+  padding-left: 15px; }

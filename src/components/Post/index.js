@@ -5,6 +5,7 @@ import './css/Post.css';
 import PostImage from './PostImage';
 import PostToolbar from './PostToolbar';
 import PostTitle from './PostTitle';
+import PostDescription from './PostDescription';
 
 export class Post extends Component {
     constructor(props) {
@@ -74,7 +75,7 @@ export class Post extends Component {
                         <div className="col-7">
                             <PostToolbar post={post} toggleCensor={this.toggleCensor} />
                             <PostTitle title={post.title} tags={post.post_tags} />
-                            <post-description post="post"></post-description>
+                            <PostDescription description={post.description} />
                         </div>
                     </div>
                 </div>

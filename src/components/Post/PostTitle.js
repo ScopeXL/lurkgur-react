@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 import './css/PostTitle.css';
 
@@ -29,9 +30,9 @@ export class PostTitle extends Component {
         if (tags) {
             tags.map((tag, i) => {
                 return tags_html.push(
-                    <a key={i} className="tag" style={{background: '#' + tag.accent}}>
+                    <Link key={i} to={'/tag/' + tag.name} className="tag" style={{background: '#' + tag.accent}}>
                         {tag.display_name}
-                    </a>
+                    </Link>
                 );
             });
         }

@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import './css/PostDetails.css';
+import PostToolbar from './PostToolbar';
+import PostImage from './PostImage';
+import PostTitle from './PostTitle';
+import PostDescription from './PostDescription';
+
 export class PostDetails extends Component {
     constructor(props) {
         super(props);
@@ -66,13 +72,33 @@ export class PostDetails extends Component {
     }
 
     render() {
-        return (
-            <div className="row max-height">
-                <div className="col-12">
-                    Post Details
+        let post = this.state.post;
+        let images = [];
+
+        if (post) {
+            if (post.images) {
+                post.images.map((image, i) => {
+                    return images.push(
+                        <div key={i}>
+                            <PostImage post={post} image={image} details={true} />
+                            <PostTitle title={image.title} />
+                            <PostDescription description={image.description} />
+                        </div>
+                    );
+                });
+            }
+            return (
+                <div className="row post-details-container max-height">
+                    <div className="col-12 col-sm-12 col-md-10 offset-md-1">
+                        <PostToolbar post={post} />
+                        <PostTitle title={post.title} tags={post.post_tags} />
+                        {images}
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        } else {
+            return 'Loading...';
+        }
     }
 }
 

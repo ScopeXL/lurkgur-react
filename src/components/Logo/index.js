@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from '@fortawesome/fontawesome-free-solid';
 
@@ -52,7 +53,9 @@ export class Logo extends Component {
                     {play_pause_icon}
                 </div>
 
-                <img src="/images/lurkgur.png" alt="lurkgur" />
+                <Link to="/">
+                    <img src="/images/lurkgur.png" alt="lurkgur" />
+                </Link>
             </div>
         );
     }
